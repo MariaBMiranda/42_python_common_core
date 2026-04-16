@@ -1,0 +1,32 @@
+Custom String Sort with Multiple Keys
+
+Given a list of strings `words`, sort them based on the following rules:
+
+1. Sort by **length of the string** (ascending)
+2. If two strings have the same length, sort by the **ASCII values of characters in lexicographical order**
+3. If still tied, sort by the **number of vowels in the string** (ascending)
+
+Return the sorted list of strings.
+
+Write a function:
+def crypto_sorter(words: List[str]) -> List[str]:
+
+
+
+Examples
+
+1.
+Input: words = ["apple", "Banana", "kiwi", "orange", "Egg"]
+Output: ["Egg", "kiwi", "apple", "Banana", "orange"]
+
+
+2.
+Input: words = ["a", "bb", "ccc", "dd"]
+Output: ["a", "bb", "dd", "ccc"]
+
+3.
+Input: words = ["abc", "acb", "bac"]
+Output: ["abc", "acb", "bac"]
+
+
+Note: Description based on exam logic, not a literal transcription.

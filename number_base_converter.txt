@@ -1,0 +1,30 @@
+Convert Number from One Base to Another
+
+Given a string `s` representing a number in base `base_from`, return its representation in base `base_to` as a string.
+
+The digits used are `0-9` and uppercase letters `A-Z`, where `A` represents 10, `B` represents 11, and so on up to `Z` representing 35.
+
+If the input string contains invalid characters for the given base, or if either base is outside the valid range, return `"ERROR"`.
+
+
+Write a function:
+def number_base_converter(s: str, base_from: int, base_to: int) -> str:
+
+
+
+Examples
+
+1.
+Input: s = "1011", base_from = 2, base_to = 10
+Output: "11"
+
+2.
+Input: s = "1A", base_from = 16, base_to = 2
+Output: "11010"
+
+
+3.
+Input: s = "FF", base_from = 16, base_to = 10
+Output: "255"
+
+Note: Description based on exam logic, not a literal transcription.

@@ -1,0 +1,26 @@
+Whisper Cipher
+
+Given a string `s` and an integer `shift`, return a new string where each alphabetical character in `s` is shifted by `shift` positions in the alphabet.
+The shift should wrap around the alphabet (i.e., after `'z'` comes `'a'`, and after `'Z'` comes `'A'`). 
+Preserve the case of each letter. Non-alphabetical characters should remain unchanged.
+
+Write a function:
+def whisper_cipher(s: str, shift: int) -> str:
+
+
+Examples
+
+1.
+Input: s = "Hello", shift = 3
+Output: "Khoor"
+
+
+2.
+Input: s = "abc", shift = 1
+Output: "bcd"
+
+3.
+Input: s = "Zebra!", shift = 2
+Output: "Bgdtc!"
+
+Note: Description based on exam logic, not a literal transcription.

@@ -1,0 +1,23 @@
+Count Consecutive Digit Pairs
+
+Given a string `s` consisting of numeric digits, return the number of **distinct consecutive digit pairs** where two adjacent digits form an increasing sequence by 1.
+
+
+Write a function:
+def count_consecutive_digit_pairs(s: str) -> int:
+
+Examples
+
+1.
+Input: s = "1112233335"
+Output: 2
+
+2.
+Input: s = "1234"
+Output: 3
+
+3.
+Input: s = "1111"
+Output: 0
+
+Note: Description based on exam logic, not a literal transcription.
