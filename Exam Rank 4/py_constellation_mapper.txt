@@ -1,0 +1,57 @@
+=============================================================
+ Exercício 01: py_constellation_mapper                 25 pts
+=============================================================
+
+Protótipo:
+    def constellation_mapper(stars: list[tuple[int, int]], size: int) -> list[str]
+
+-------------------------------------------------------------
+Descrição
+-------------------------------------------------------------
+Desenhe um "mapa estelar" quadrado de dimensão `size` x `size`.
+
+- O mapa é uma lista de `size` strings, cada uma com `size`
+  caracteres.
+- Toda posição começa como "." (céu vazio).
+- Cada estrela é uma coordenada (x, y), onde:
+    * x = coluna (índice horizontal, da esquerda p/ direita)
+    * y = linha  (índice vertical, de cima p/ baixo)
+  Na posição de uma estrela, coloque "*".
+- Se a coordenada estiver FORA do mapa (x ou y < 0, ou
+  x ou y >= size), a estrela NÃO é desenhada (ignorar).
+- Estrelas repetidas na mesma posição contam como uma só.
+
+-------------------------------------------------------------
+Restrições
+-------------------------------------------------------------
+- size >= 0  (se size == 0, retorne [])
+- A ordem das estrelas na entrada não importa.
+
+-------------------------------------------------------------
+Exemplos
+-------------------------------------------------------------
+Input:
+    constellation_mapper([(0, 0), (2, 2)], 3)
+Output:
+    ['*..', '...', '..*']
+
+Input:
+    constellation_mapper([(1, 0), (1, 2)], 3)
+Output:
+    ['.*.', '...', '.*.']
+
+Input:
+    # (5, 5) está fora do mapa de tamanho 3 -> ignorada
+    constellation_mapper([(0, 1), (5, 5)], 3)
+Output:
+    ['...', '*..', '...']
+
+Input:
+    constellation_mapper([], 2)
+Output:
+    ['..', '..']
+
+Input:
+    constellation_mapper([(0, 0)], 0)
+Output:
+    []

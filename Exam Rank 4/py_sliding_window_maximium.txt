@@ -1,0 +1,49 @@
+=============================================================
+ Exercício 04: py_sliding_window_maximium              25 pts
+=============================================================
+
+Protótipo:
+    def sliding_window_maximium(nums: list[int], k: int) -> list[int]
+
+-------------------------------------------------------------
+Descrição
+-------------------------------------------------------------
+Dada uma lista de inteiros `nums` e um inteiro `k`, considere uma
+"janela" de tamanho `k` que desliza da esquerda para a direita,
+uma posição por vez.
+
+Para cada posição da janela, pegue o MAIOR valor dentro dela.
+Retorne a lista com todos esses máximos, na ordem em que as
+janelas aparecem.
+
+(É o clássico "Sliding Window Maximum".)
+
+-------------------------------------------------------------
+Restrições
+-------------------------------------------------------------
+- 1 <= k <= len(nums) nos casos normais.
+- Se nums estiver vazia ou k <= 0, retorne [].
+- O número de janelas (e de máximos) é: len(nums) - k + 1.
+
+-------------------------------------------------------------
+Exemplos
+-------------------------------------------------------------
+Input:
+    sliding_window_maximium([1, 3, -1, -3, 5, 3, 6, 7], 3)
+Output:
+    [3, 3, 5, 5, 6, 7]
+
+Input:
+    sliding_window_maximium([4, 2, 12, 11, -5], 2)
+Output:
+    [4, 12, 12, 11]
+
+Input:
+    sliding_window_maximium([9], 1)
+Output:
+    [9]
+
+Input:
+    sliding_window_maximium([], 3)
+Output:
+    []

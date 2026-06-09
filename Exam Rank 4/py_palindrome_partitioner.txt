@@ -1,0 +1,60 @@
+=============================================================
+ Exercício 03: py_palindrome_partitioner               25 pts
+=============================================================
+
+Protótipo:
+    def palindrome_partitioner(s: str) -> int
+
+-------------------------------------------------------------
+Descrição
+-------------------------------------------------------------
+Dada uma string `s`, encontre o MENOR número de cortes
+necessários para particioná-la de forma que CADA parte
+resultante seja um palíndromo.
+
+Um corte divide a string entre dois caracteres. Com `c` cortes,
+a string fica dividida em `c + 1` partes. Queremos o menor `c`
+tal que todas as partes sejam palíndromos.
+
+Retorne esse número mínimo de cortes (um inteiro).
+
+(É o clássico "Palindrome Partitioning II".)
+
+-------------------------------------------------------------
+Restrições
+-------------------------------------------------------------
+- Uma string vazia ou de 1 caractere já é palíndromo -> 0 cortes.
+- Se a string inteira já for palíndromo -> 0 cortes.
+- No pior caso (todos os chars distintos), o resultado é
+  len(s) - 1 cortes.
+
+-------------------------------------------------------------
+Exemplos
+-------------------------------------------------------------
+Input:
+    palindrome_partitioner("aab")
+Output:
+    1
+    # corte: "aa" | "b"  -> ambas palíndromos -> 1 corte
+
+Input:
+    palindrome_partitioner("aba")
+Output:
+    0
+    # "aba" já é palíndromo -> nenhum corte
+
+Input:
+    palindrome_partitioner("abc")
+Output:
+    2
+    # "a" | "b" | "c" -> 2 cortes (pior caso)
+
+Input:
+    palindrome_partitioner("a")
+Output:
+    0
+
+Input:
+    palindrome_partitioner("noon")
+Output:
+    0

@@ -1,0 +1,52 @@
+=============================================================
+ Exercício 02: py_merge_sorted_list                    25 pts
+=============================================================
+
+Protótipo:
+    def merge_sorted_list(lists: list[list[int]]) -> list[int]
+
+-------------------------------------------------------------
+Descrição
+-------------------------------------------------------------
+Você recebe uma lista de listas de inteiros em qualquer ordem.
+
+Una todas as sub-listas em UMA única lista, também ordenada em
+ordem crescente, e retorne-a.
+
+(É o clássico "Merge k Sorted Lists".)
+
+-------------------------------------------------------------
+Restrições
+-------------------------------------------------------------
+- A lista externa pode estar vazia  -> retorne []
+- Sub-listas vazias podem existir e devem ser ignoradas.
+- Valores podem repetir (mantenha as repetições).
+- Cada sub-lista individualmente já vem ordenada.
+
+-------------------------------------------------------------
+Exemplos
+-------------------------------------------------------------
+Input:
+    merge_sorted_list([[1, 4, 5], [1, 3, 4], [2, 6]])
+Output:
+    [1, 1, 2, 3, 4, 4, 5, 6]
+
+Input:
+    merge_sorted_list([[1, 2, 3], [], [0, 4]])
+Output:
+    [0, 1, 2, 3, 4]
+
+Input:
+    merge_sorted_list([])
+Output:
+    []
+
+Input:
+    merge_sorted_list([[], []])
+Output:
+    []
+
+Input:
+    merge_sorted_list([[-5, -1, 7]])
+Output:
+    [-5, -1, 7]
