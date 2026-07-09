@@ -1,13 +1,12 @@
-Write a function that takes a list of sublists and returns a list containing the elements present in every sublist.
-The result must not contain duplicates and must preserve the order in which the elements appear in the first sublist. 
-If the input list is empty, or if any sublist is empty, the result is an empty list.
+Returns a list containing the elements present in every sublist, without duplicates, in ascending order. If the input list is empty, or if any sublist is empty, the result is an empty list. All sublists contain elements of the same comparable type.
 
 def common_elements(lists: list) -> list:
 
 
-common_elements([[1, 2, 3, 4], [2, 3, 5], [0, 2, 3, 9]])  # [2, 3]
+common_elements([[1, 2, 3, 4], [2, 3, 5], [0, 2, 3, 9]])   # [2, 3]
+common_elements([[4, 1, 3], [3, 4, 9]])                    # [3, 4]
 common_elements([[1, 2], [3, 4]])                          # []
-common_elements([["a", "b", "a"], ["b", "a"]])             # ['a', 'b']
-common_elements([[1, 2, 3]])                               # [1, 2, 3]
+common_elements([["b", "a", "b"], ["b", "a"]])             # ['a', 'b']
+common_elements([[3, 1, 2]])                               # [1, 2, 3]
 common_elements([])                                        # []
 common_elements([[1, 2], []])                              # []
