@@ -1,0 +1,14 @@
+Write a function that takes two lists and determines whether the second one is a rotation of the first. 
+A rotation shifts the elements cyclically, and the direction (left or right) does not matter — it is enough that some shift transforms one into the other.
+Two lists of different lengths can never be rotations of one another. 
+Two empty lists are considered rotations of each other.
+
+def is_rotation(arr1: list, arr2: list) -> bool:
+
+is_rotation([1, 2, 3, 4, 5], [3, 4, 5, 1, 2])  # True  (left rotation by 2)
+is_rotation([1, 2, 3, 4, 5], [4, 5, 1, 2, 3])  # True  (right rotation by 2)
+is_rotation([1, 2, 3], [1, 2, 3])              # True  (rotation by 0)
+is_rotation([1, 2, 3], [3, 2, 1])              # False (reversal, not a rotation)
+is_rotation([1, 2, 3], [1, 2, 3, 4])           # False (different lengths)
+is_rotation([], [])                            # True
+is_rotation([1, 1, 2], [1, 2, 1])              # True
