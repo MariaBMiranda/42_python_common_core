@@ -1,0 +1,54 @@
+Write a function that determines a valid package installation order by resolving dependencies. Use topological sorting to ensure dependencies are installed before the packages that require them.
+
+## Function Signature
+
+def package_dependency_resolver(packages: dict[str, list[str]]) -> list[str]:
+
+## Core Requirements
+
+The function should:
+- Take a dictionary where keys are package names and values are lists of dependencies.
+- Return packages in installation order (dependencies first).
+- Return an empty list ([]) if no valid order exists (e.g., circular dependencies or self-dependencies).
+- Handle empty inputs and isolated dependency chains gracefully.
+- Ignore references to packages that are not present as keys in the input dictionary.
+- Ensure a package cannot be installed until all its dependencies are installed.
+
+## Algorithm Details & Edge Cases
+
+- Topological Sorting: Use a topological sort algorithm (e.g., Kahn's algorithm).
+- Dependency Priority: Process packages with no remaining dependencies first.
+- Deterministic Output: When multiple valid packages can be processed at the same time (choices exist), process them alphabetically to ensure deterministic output.
+- Empty Input: Return an empty list.
+- Multiple Independent Chains: Process all chains, respecting the alphabetical order rule.
+- Missing Dependencies: Ignore missing packages (treat them as if they don't exist in the requirements).
+
+## Examples
+
+Example 1: Standard Chain
+Input: {"app": ["database"], "database": ["driver"], "driver": []}
+Output: ["driver", "database", "app"]
+# Note: driver -> database -> app
+
+Example 2: Multiple Dependencies
+Input: {"A": [], "B": ["A"], "C": ["A", "B"]}
+Output: ["A", "B", "C"]
+# Note: A has no deps, B needs A, C needs both A and B
+
+Example 3: Empty Input
+Input: {}
+Output: []
+
+Example 4: Circular Dependency
+Input: {"X": ["Y"], "Y": ["X"]}
+Output: []
+# Note: Circular dependency (X needs Y, Y needs X). No valid order possible.
+
+Example 5: Independent Chains
+Input: {
+"web": [],
+"api": [],
+"frontend": ["web"],
+"backend": ["api"]
+}
+Output: ["api", "web", "backend", "frontend"]
