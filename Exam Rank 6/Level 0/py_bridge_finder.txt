@@ -1,0 +1,35 @@
+Assignment name  : py_bridge_finder
+Expected files   : py_bridge_finder.py
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that finds all bridges in an undirected graph. A bridge is an edge
+removal increases the number of connected components in the graph.
+
+Your function must be declared as follows:
+
+def bridge_finder(graph: dict[int, list[int]]) -> list[tuple[int, int]]:
+
+The function should:
+- Take an undirected graph as an adjacency list
+- Return all bridges as a list of tuples (u, v) where u < v
+- Return results sorted by first element, then by second element
+- Handle empty graphs (return empty list)
+- Handle graphs with no bridges (return empty list)
+
+Examples:
+
+Input: bridge_finder({0: [1, 2], 1: [0, 2], 2: [0, 1]})
+Output: []
+
+Input: bridge_finder({0: [1], 1: [0, 2], 2: [1]})
+Output: [(0, 1), (1, 2)]
+
+Input: bridge_finder({0: [1, 2], 1: [0, 2, 3], 2: [0, 1], 3: [1]})
+Output: [(1, 3)]
+
+Input: bridge_finder({})
+Output: []
+
+Input: bridge_finder({0: [1], 1: [0]})
+Output: [(0, 1)]

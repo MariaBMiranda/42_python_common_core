@@ -1,0 +1,37 @@
+Assignment name : py_spiral_weaver
+Expected files : py_spiral_weaver.py
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that generates a spiral matrix filled with numbers from 1 to n², where n is the size of the square matrix.
+
+Your function must be declared as follows:
+
+def spiral_weaver(size: int) -> list[list[int]]:
+
+The spiral starts from the top-left corner (0,0) and moves:
+1. Right across the top row
+2. Down the right column
+3. Left across the bottom row
+4. Up the left column
+5. Repeat inward
+
+Examples:
+
+Input: spiral_weaver(1)
+Output: [[1]]
+
+Input: spiral_weaver(2)
+Output: [[1, 2], [4, 3]]
+
+Input: spiral_weaver(3)
+Output: [[1, 2, 3], [8, 9, 4], [7, 6, 5]]
+
+Input: spiral_weaver(4)
+Output: [[1, 2, 3, 4], [12, 13, 14, 5], [11, 16, 15, 6], [10, 9, 8, 7]]
+
+Input: spiral_weaver(0)
+Output: []
+
+Input: spiral_weaver(-1)
+Output: []

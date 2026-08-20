@@ -1,0 +1,66 @@
+Assignment name : py_meeting_room_scheduler
+Expected files : py_meeting_room_scheduler.py
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that determines the minimum number of meeting rooms needed
+to schedule all given meetings and returns the room assignments.
+
+Your function must be declared as follows:
+
+def meeting_room_scheduler(meetings: list[list[int]]) -> dict[str, any]:
+
+The function should:
+- Take meetings as [[start, end], ...] where end is exclusive
+- Find minimum number of rooms needed to schedule all meetings
+- Assign meetings to rooms efficiently
+- Handle edge cases: empty meetings, overlapping meetings
+
+Return format:
+{
+"rooms_needed": int,
+"room_assignments": dict[int, list[list[int]]] # Room ID -> meetings in that room
+}
+
+Examples:
+
+Input: meeting_room_scheduler([[0, 30], [5, 10], [15, 20]])
+Output: {
+"rooms_needed": 2,
+"room_assignments": {
+0: [[0, 30]],
+1: [[5, 10], [15, 20]]
+}
+}
+
+Input: meeting_room_scheduler([[9, 10], [9, 12], [11, 13]])
+Output: {
+"rooms_needed": 2,
+"room_assignments": {
+0: [[9, 10], [11, 13]],
+1: [[9, 12]]
+}
+}
+
+Input: meeting_room_scheduler([[1, 5], [8, 9], [8, 9]])
+Output: {
+"rooms_needed": 2,
+"room_assignments": {
+0: [[1, 5], [8, 9]],
+1: [[8, 9]]
+}
+}
+
+Input: meeting_room_scheduler([])
+Output: {
+"rooms_needed": 0,
+"room_assignments": {}
+}
+
+Input: meeting_room_scheduler([[1, 2], [3, 4], [5, 6]])
+Output: {
+"rooms_needed": 1,
+"room_assignments": {
+0: [[1, 2], [3, 4], [5, 6]]
+}
+}

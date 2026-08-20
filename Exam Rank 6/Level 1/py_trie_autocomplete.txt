@@ -1,0 +1,43 @@
+Assignment name  : py_trie_autocomplete
+Expected files   : py_trie_autocomplete.py
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that implements an autocomplete system using a Trie data structure.
+The function should insert words and find all words with a given prefix.
+
+Your function must be declared as follows:
+
+def trie_autocomplete(words: list[str], prefix: str) -> list[str]:
+
+The function should:
+- Build a Trie from the list of words
+- Return all unique words that start with the given prefix
+- Return results in alphabetical order
+- Handle empty prefix (return all words sorted)
+- Return empty list if no matches found
+- Be case-sensitive
+- Duplicate words in the input should appear only once in the output
+
+Examples:
+
+Input: trie_autocomplete(["apple", "app", "apricot", "banana"], "app")
+Output: ["app", "apple"]
+
+Input: trie_autocomplete(["apple", "app", "apricot", "banana"], "ban")
+Output: ["banana"]
+
+Input: trie_autocomplete(["hello", "world", "help", "heap"], "he")
+Output: ["heap", "hello", "help"]
+
+Input: trie_autocomplete(["test"], "xyz")
+Output: []
+
+Input: trie_autocomplete(["cat", "car", "card", "care"], "car")
+Output: ["car", "card", "care"]
+
+Input: trie_autocomplete([], "test")
+Output: []
+
+Input: trie_autocomplete(["a", "ab", "abc"], "")
+Output: ["a", "ab", "abc"]

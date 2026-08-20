@@ -1,0 +1,40 @@
+Assignment name : py_graph_cycle_detector
+Expected files : py_graph_cycle_detector.py
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that detects if a directed graph contains a cycle.
+The graph is represented as an adjacency list.
+
+Your function must be declared as follows:
+
+def graph_cycle_detector(graph: dict[int, list[int]]) -> bool:
+
+The function should:
+- Take a graph as a dictionary where keys are nodes and values are lists of adjacent nodes
+- Return True if the graph contains a cycle, False otherwise
+- Handle empty graphs (return False)
+- Handle self-loops (node pointing to itself) as cycles
+
+Examples:
+
+Input: graph_cycle_detector({0: [1], 1: [2], 2: [0]})
+Output: True
+
+Input: graph_cycle_detector({0: [1], 1: [2], 2: []})
+Output: False
+
+Input: graph_cycle_detector({0: [1, 2], 1: [3], 2: [3], 3: []})
+Output: False
+
+Input: graph_cycle_detector({0: [0]})
+Output: True
+
+Input: graph_cycle_detector({})
+Output: False
+
+Input: graph_cycle_detector({0: [1], 1: [2], 2: [3], 3: [1]})
+Output: True
+
+Input: graph_cycle_detector({0: [], 1: [], 2: []})
+Output: False

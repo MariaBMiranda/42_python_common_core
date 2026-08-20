@@ -1,0 +1,62 @@
+Assignment name : py_nebula_compressor
+Expected files : py_nebula_compressor.py
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that implements run-length encoding compression and decompression.
+
+Your function must be declared as follows:
+
+def nebula_compressor(operation: str, data: str) -> str:
+
+The function should:
+- Take two arguments: operation ("compress" or "decompress") and data string
+- For compression: replace consecutive identical characters with character followed by count
+- For decompression: expand "char+count" format back to repeated characters
+- Return "Error" for invalid operations
+- Handle empty strings correctly
+
+Compression rules:
+- If a character appears only once, keep the character as-is
+- If a character appears 2-9 times consecutively, format as "char+count"
+- If a character appears 10+ times, break into chunks of 9
+
+Decompression rules:
+- Format "char+count" means repeat char count times
+- Single characters remain unchanged
+
+Examples:
+
+Input: nebula_compressor("compress", "aaabbc")
+Output: "a3b2c"
+
+Input: nebula_compressor("compress", "hello")
+Output: "hel2o"
+
+Input: nebula_compressor("compress", "aaaaaaaaaaaaa")
+Output: "a9a4"
+# 13 'a's = 9 + 4
+
+Input: nebula_compressor("compress", "abcdef")
+Output: "abcdef"
+
+Input: nebula_compressor("decompress", "a3b2c")
+Output: "aaabbc"
+
+Input: nebula_compressor("decompress", "hel2o")
+Output: "hello"
+
+Input: nebula_compressor("decompress", "a9a4")
+Output: "aaaaaaaaaaaaa"
+
+Input: nebula_compressor("decompress", "abcdef")
+Output: "abcdef"
+
+Input: nebula_compressor("compress", "")
+Output: ""
+
+Input: nebula_compressor("decompress", "")
+Output: ""
+
+Input: nebula_compressor("invalid", "test")
+Output: "Error"

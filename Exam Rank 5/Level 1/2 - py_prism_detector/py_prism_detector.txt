@@ -1,0 +1,51 @@
+Assignment name : py_prism_detector
+Expected files : py_prism_detector.py
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that finds all occurrences of a pattern in a 2D grid.
+
+Your function must be declared as follows:
+
+def prism_detector(grid: list[str], pattern: str) -> list[tuple[int, int, str]]:
+
+The function should:
+- Take a 2D grid (list of strings) and a pattern string to search for
+- Search in all 8 directions: horizontal, vertical, and diagonal (both ways)
+- Return a list of tuples with starting positions and direction codes
+- Handle empty grids and empty patterns correctly
+- Return empty list if no matches found
+
+Search directions:
+- Horizontal (left to right and right to left)
+- Vertical (top to bottom and bottom to top)
+- Diagonal (both diagonals, both directions)
+
+Direction codes:
+- "H" = Horizontal (left to right)
+- "H-" = Horizontal (right to left)
+- "V" = Vertical (top to bottom)
+- "V-" = Vertical (bottom to top)
+- "D1" = Diagonal (top-left to bottom-right)
+- "D1-" = Diagonal (bottom-right to top-left)
+- "D2" = Diagonal (top-right to bottom-left)
+- "D2-" = Diagonal (bottom-left to top-right)
+
+Output order is based on row, then column, then direction code as listed above.
+
+Examples:
+
+Input: prism_detector(["ABC", "DEF", "GHI"], "ADG")
+Output: [(0, 0, "V")]
+
+Input: prism_detector(["HELLO", "WORLD"], "LL")
+Output: [(0, 2, "H")]
+
+Input: prism_detector(["XYZ", "ABC", "DEF"], "XBF")
+Output: [(0, 0, "D1")]
+
+Input: prism_detector([], "ABC")
+Output: []
+
+Input: prism_detector(["ABC"], "")
+Output: []

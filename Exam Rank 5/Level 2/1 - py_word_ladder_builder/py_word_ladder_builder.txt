@@ -1,0 +1,38 @@
+Assignment name : py_word_ladder_builder
+Expected files : py_word_ladder_builder.py
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that finds the shortest transformation sequence from a start word to an end word, where each step changes exactly one letter and each intermediate word must be in the given word list.
+
+Your function must be declared as follows:
+
+def word_ladder_builder(start: str, end: str, word_list: list[str]) -> int:
+
+The function should:
+- Find the shortest path length from start to end word
+- Each transformation changes exactly one letter
+- All intermediate words must be in word_list
+- Return the length of transformation sequence (including start and end)
+- Return 0 if no transformation is possible
+- All words have the same length and contain only lowercase letters
+
+Examples:
+
+Input: word_ladder_builder("hit", "cog", ["hot","dot","dog","lot","log","cog"])
+Output: 5
+
+Input: word_ladder_builder("hit", "cog", ["hot","dot","dog","lot","log"])
+Output: 0
+
+Input: word_ladder_builder("a", "c", ["a","b","c"])
+Output: 2
+
+Input: word_ladder_builder("hot", "dog", ["hot","dog"])
+Output: 0
+
+Input: word_ladder_builder("hot", "hot", ["hot"])
+Output: 1
+
+Input: word_ladder_builder("cat", "dog", ["bat","bag","bog","dog"])
+Output: 5
