@@ -1,14 +1,35 @@
-Write a function that takes two lists and determines whether the second one is a rotation of the first. 
-A rotation shifts the elements cyclically, and the direction (left or right) does not matter — it is enough that some shift transforms one into the other.
-Two lists of different lengths can never be rotations of one another. 
-Two empty lists are considered rotations of each other.
+Write a Python function that takes two lists (arrays) as parameters and determines if the second list is a rotation of the first list (left or right).
 
-def is_rotation(arr1: list, arr2: list) -> bool:
+A rotation means that the elements are shifted circularly. For example, shifting [1, 2, 3] to the right by one position results in [3, 1, 2].
 
-is_rotation([1, 2, 3, 4, 5], [3, 4, 5, 1, 2])  # True  (left rotation by 2)
-is_rotation([1, 2, 3, 4, 5], [4, 5, 1, 2, 3])  # True  (right rotation by 2)
-is_rotation([1, 2, 3], [1, 2, 3])              # True  (rotation by 0)
-is_rotation([1, 2, 3], [3, 2, 1])              # False (reversal, not a rotation)
-is_rotation([1, 2, 3], [1, 2, 3, 4])           # False (different lengths)
-is_rotation([], [])                            # True
-is_rotation([1, 1, 2], [1, 2, 1])              # True
+The function must return True if arr2 is a rotation of arr1, and False otherwise.
+If the arrays have different lengths, they cannot be rotations of each other.
+Two empty arrays are considered rotations of each other.
+
+
+def array_rotation_detector(arr1: list, arr2: list) -> bool:
+
+Input
+array_rotation_detector([1, 2, 3, 4, 5], [4, 5, 1, 2, 3])
+Output
+True
+
+Input
+array_rotation_detector([1, 2, 3, 4, 5], [5, 1, 2, 3, 4])
+Output
+True
+
+Input
+array_rotation_detector([1, 2, 3], [3, 2, 1])
+Output
+False
+
+Input
+array_rotation_detector([1, 2], [1, 2, 3])
+Output
+False
+
+Input
+array_rotation_detector([], [])
+Output
+True
