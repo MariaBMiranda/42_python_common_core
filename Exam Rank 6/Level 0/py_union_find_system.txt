@@ -1,0 +1,67 @@
+Write a class that implements a Union-Find (Disjoint Set Union) data structure
+with path compression and union by rank optimization.
+
+Your class must be declared as follows:
+
+class UnionFind:
+    def __init__(self, n: int):
+    def find(self, x: int) -> int:
+    def union(self, x: int, y: int) -> bool:
+    def connected(self, x: int, y: int) -> bool:
+
+The class should:
+- Initialize n elements (0 to n-1) where each element is its own set
+- find(x): Return the representative (root) of the set containing x
+- union(x, y): Merge the sets containing x and y, return True if merged, False if already in same set
+- connected(x, y): Return True if x and y are in the same set
+- Implement path compression in find() for optimization
+- Implement union by rank for balanced trees
+
+Examples:
+
+uf = UnionFind(5)
+uf.connected(0, 1)    # Returns False
+uf.union(0, 1)        # Returns True (merged)
+uf.connected(0, 1)    # Returns True
+uf.union(1, 2)        # Returns True (merged)
+uf.connected(0, 2)    # Returns True
+uf.union(0, 1)        # Returns False (already connected)
+uf.find(2)            # Returns root of set containing 2
+
+uf = UnionFind(3)
+uf.union(0, 1)        # Returns True
+uf.union(1, 2)        # Returns True
+uf.connected(0, 2)    # Returns True
+uf.find(0) == uf.find(2)  # Returns True
+
+
+Union-Find data structure
+
+The union-find data structure, also known as disjoint set union (DSU),
+is used to keep track of a collection of disjoint (non-overlapping) sets.
+It is especially useful in algorithms that need to efficiently manage
+connectivity, such as graph algorithms, clustering, and network connectivity
+problems. Each element belongs to exactly one set, and each set is
+represented by a root element.
+
+The data structure supports three main operations:
+
+find(x)
+The find operation returns the representative (or root) of the set
+containing element x. With path compression, the operation is optimized
+by making every node visited during the search point directly to the root.
+This flattens the structure of the tree over time, significantly reducing
+the cost of future find operations.
+
+union(x, y)
+The union operation merges the two sets containing elements x and y. When
+using union by rank, each root maintains a rank that approximates the height
+(or size) of its tree. The root with the smaller rank is attached under the
+root with the larger rank, which helps keep the trees shallow. If both roots
+have the same rank, one becomes the parent of the other and its rank is
+increased by one.
+
+connected(x, y)
+The connected operation checks whether two elements belong to the same set.
+It is typically implemented by comparing the results of find(x) and find(y).
+If both elements have the same root, they are in the same set.
